@@ -1,0 +1,12 @@
+class Solution:
+    def finalPrices(self, prices: List[int]) -> List[int]:
+        result=[]
+        for i in range (len(prices)):
+            j=i+1
+            while (j < len(prices)):
+                if prices [j] > prices [i]:
+                    j+=1
+                else:
+                    prices[i] = prices[i] - prices[j]
+                    j=len(prices) + 1
+        return prices
