@@ -1,0 +1,7 @@
+class Solution:
+    def minPartitions(self, n: str) -> int:
+        result = 0
+        nList = []
+        for i in range (len(n)):
+            nList.append(int(n[i]))             
+        return max(nList)
