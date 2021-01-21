@@ -1,0 +1,15 @@
+class Solution:
+    def sortArrayByParityII(self, A: List[int]) -> List[int]:
+        oddList = []
+        evnList = []
+        result = [None] * len(A)
+        for i in range (len(A)):
+            if A[i] % 2 == 0:
+                evnList.append(A[i])
+            else:
+                oddList.append(A[i])
+        for j in range (0,len(result),2):
+            result[j]=evnList[int(j/2)]
+            result[j+1]=oddList[int(j/2)]
+        return result
+            
