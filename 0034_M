@@ -1,0 +1,21 @@
+class Solution:
+    def searchRange(self, nums: List[int], target: int) -> List[int]:
+        
+        hit = []                     # The hit list will keep track of all indices where nums contains
+        result = []                  # ('hits') our target value.
+        
+        for i in range (len(nums)):  # *search method* Ex: Input nums=[1,2,3,3,3,5], target=3
+            if nums[i] == target:    # nums[i] == 3 at i==2, i==3, and i==4, so hit=[2,3,4]
+                hit.append(i)
+                
+        if len(hit) == 0:            # If no indices hit our target value, the target value is not in 
+            return [-1,-1]           # nums, so return [-1,-1]
+        
+        elif len(hit) == 1:          # If the target value only occurs at one index, then its position
+            hit.append(hit[0])       # both starts and ends at that index, so return [hit[0],hit[0]]
+            return hit
+        
+        else:                        # If the target value occurs in at least two indices, the start
+            result.append(hit[0])    # position is the first index it occured and the end position is 
+            result.append(hit[-1])   # the last, so return [hit[0],hit[-1]]
+            return result
