@@ -1,0 +1,19 @@
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        sorted(s) == sorted(t) 
+        
+        
+        
+    # OR, for strings including unicode characters (needs work) #    
+        
+        
+        if len(s) != len(t):
+            return False
+        
+        for x in s:
+            if x not in t:
+                return False
+            elif s.count(x) != t.count(x):
+                return False
+            
+        return True
