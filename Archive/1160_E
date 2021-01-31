@@ -1,0 +1,18 @@
+class Solution:
+    def countCharacters(self, words: List[str], chars: str) -> int:
+        result=[1] * len(words)
+        i=0
+        
+        while (i < len(result)):
+            for x in words[i]:
+                if words[i].count(x) > chars.count(x):
+                    result[i]=0
+            i+=1
+            
+        for j in range (len(result)):
+            if result[j] == 1:
+                result[j] = len(words[j])
+                    
+        return sum(result)
+        
+        # Try hashmap to improve speed # 

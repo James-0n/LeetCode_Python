@@ -1,0 +1,11 @@
+class Solution:
+    def generateTheString(self, n: int) -> str:
+        result=""
+        if n % 2 != 0:
+            for i in range (n):
+                result = result + "a"
+        if n % 2 == 0:
+            for i in range (n-1):
+                result = result + "a"
+            result = result + "b"
+        return result

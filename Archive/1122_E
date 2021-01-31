@@ -1,0 +1,15 @@
+class Solution:
+    def relativeSortArray(self, arr1: List[int], arr2: List[int]) -> List[int]:
+        outcasts=[]
+        result=[]
+        i=0
+        for x in arr1:
+            if x not in arr2: 
+                outcasts.append(x)
+        while (i < len(arr2)):
+            for j in range (len(arr1)): 
+                if arr1[j] == arr2[i]:
+                    result.append(arr1[j])
+            i+=1
+        result.extend(sorted(outcasts))
+        return result

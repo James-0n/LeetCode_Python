@@ -1,0 +1,10 @@
+class Solution:
+    def subtractProductAndSum(self, n: int) -> int:
+        arr=[int(i) for i in str(n)]
+        Sum=sum(arr)
+        Prod=1
+        for i in range (len(arr)):
+            Prod=Prod*arr[i]
+        return Prod-Sum
+            
+        

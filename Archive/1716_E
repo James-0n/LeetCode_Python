@@ -1,0 +1,9 @@
+class Solution:
+    def totalMoney(self, n: int) -> int:
+        dailyBal=[None] * n
+        for i in range (0,n,7):
+            dailyBal[i]=(i//7)+1
+            for j in range (i+1,i+7):
+                if j < n:
+                    dailyBal[j]=dailyBal[j-1]+1
+        return dailyBal

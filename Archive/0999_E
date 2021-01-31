@@ -1,0 +1,41 @@
+class Solution:
+    def numRookCaptures(self, board: List[List[str]]) -> int:
+        
+        count = 0
+        
+        for i in range (len(board)):
+            for j in range (len(board[0])):
+                if board[i][j] == "R": 
+                    iR=i
+                    jR=j
+                    break
+        
+        for k in range (iR-1,0,-1):
+            if board[k][jR] == "B":
+                break
+            elif board[k][jR] == "p":
+                count+=1
+                break
+                
+        for k in range (iR+1,len(board[0])):
+            if board[k][jR] == "B":
+                break
+            elif board[k][jR] == "p":
+                count+=1
+                break
+        
+        for k in range (jR-1,0,-1):
+            if board[iR][k] == "B":
+                break
+            elif board[iR][k] == "p":
+                count+=1
+                break
+                
+        for k in range (jR+1,len(board[0])):
+            if board[iR][k] == "B":
+                break
+            elif board[iR][k] == "p":
+                count+=1
+                break
+        
+        return count
