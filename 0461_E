@@ -1,9 +1,0 @@
-class Solution:
-    def hammingDistance(self, x: int, y: int) -> int:
-        count=0
-        strX='{0:032b}'.format(x)
-        strY='{0:032b}'.format(y)
-        for i in range (len(strX)):
-            if strX[i] != strY[i]:
-                count+=1
-        return count
