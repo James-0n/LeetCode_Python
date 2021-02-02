@@ -1,9 +1,0 @@
-class Solution:
-    def xorOperation(self, n: int, start: int) -> int:
-        result=start
-        nums=[None]*n
-        for i in range (n):
-            nums[i]=start + 2*i
-        for i in range (1,n):
-            result=result^nums[i]
-        return result
